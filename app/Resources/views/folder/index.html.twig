@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Folders list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateofbirth</th>
+                <th>Placeofbirth</th>
+                <th>Level</th>
+                <th>Speciality</th>
+                <th>Photo</th>
+                <th>Nationality</th>
+                <th>Motive</th>
+                <th>Depositioncenter</th>
+                <th>Stateorcountry</th>
+                <th>Createdat</th>
+                <th>Modifiedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for folder in folders %}
+            <tr>
+                <td><a href="{{ path('folders_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
+                <td>{{ folder.dateOfBirth|date('Y-m-d H:i:s') }}</td>
+                <td>{{ folder.placeOfBirth }}</td>
+                <td>{{ folder.level }}</td>
+                <td>{{ folder.speciality }}</td>
+                <td>{{ folder.photo }}</td>
+                <td>{{ folder.nationality }}</td>
+                <td>{{ folder.motive }}</td>
+                <td>{{ folder.depositionCenter }}</td>
+                <td>{{ folder.stateOrCountry }}</td>
+                <td>{% if folder.createdAt %}{{ folder.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if folder.modifiedAt %}{{ folder.modifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('folders_show', { 'id': folder.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('folders_edit', { 'id': folder.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('folders_create') }}">Create a new folder</a>
+        </li>
+    </ul>
+{% endblock %}

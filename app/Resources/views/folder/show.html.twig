@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Folder</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ folder.id }}</td>
+            </tr>
+            <tr>
+                <th>Dateofbirth</th>
+                <td>{{ folder.dateOfBirth|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Placeofbirth</th>
+                <td>{{ folder.placeOfBirth }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ folder.level }}</td>
+            </tr>
+            <tr>
+                <th>Speciality</th>
+                <td>{{ folder.speciality }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ folder.photo }}</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>{{ folder.nationality }}</td>
+            </tr>
+            <tr>
+                <th>Motive</th>
+                <td>{{ folder.motive }}</td>
+            </tr>
+            <tr>
+                <th>Depositioncenter</th>
+                <td>{{ folder.depositionCenter }}</td>
+            </tr>
+            <tr>
+                <th>Stateorcountry</th>
+                <td>{{ folder.stateOrCountry }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if folder.createdAt %}{{ folder.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Modifiedat</th>
+                <td>{% if folder.modifiedAt %}{{ folder.modifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('folders_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('folders_edit', { 'id': folder.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
