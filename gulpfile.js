@@ -13,10 +13,15 @@ var gulp         = require("gulp"),
     plumber      = require('gulp-plumber'),
     path         = require('path');
 
+
 var cssFiles = [
-        'web/css/style.css'
+        'web/css/style.css',
+        'web/assets/bootstrap-4/css/bootstrap.css',
+        'web/assets/bootstrap-4/css/bootstrap-grid.css',
+        'web/assets/bootstrap-4/css/bootstrap-reboot.css'
     ],
     cssDestDir = 'web/css';
+
 
 var sass_input = 'web/scss/*.{scss,sass}',
     sass_watch = ['web/scss/*.{scss,sass}', 'web/scss/*/*.{scss,sass}', 'web/scss/*/*/*.{scss,sass}'],
@@ -25,6 +30,11 @@ var sass_input = 'web/scss/*.{scss,sass}',
         errLogToConsole: true,
         outputStyle: 'expanded'
     };
+
+
+var bootstrap_scss_input  = 'web/assets/bootstrap-4/scss/*.{scss,sass}',
+    bootstrap_scss_output = 'web/assets/bootstrap-4/css/'; 
+
 
 var js_src = 'web/js/*.js',
     js_dist = 'web/js/dist';
@@ -62,6 +72,13 @@ gulp.task("sass", function () {
     return gulp.src(sass_input)
         .pipe(sass(sass_options).on("error", sass.logError))
         .pipe(gulp.dest(sass_output));
+});
+
+
+gulp.task("bootstrap", function () {
+    return gulp.src(bootstrap_scss_input)
+        .pipe(sass(sass_options).on("error", sass.logError))
+        .pipe(gulp.dest(bootstrap_scss_output));
 });
 
 

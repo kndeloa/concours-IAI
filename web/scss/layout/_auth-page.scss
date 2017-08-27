@@ -1,0 +1,17 @@
+// 
+// Auth Page Layout
+
+$auth-page: '.auth-page' !default;
+
+#{$auth-page} {
+	margin: 0;
+	padding: 0;
+	height: calc(100vh - #{$navbar--height});
+	width: 100%;
+	display: table;
+}
+
+#{$auth-page}__inner {
+	display: table-cell;
+	vertical-align: middle;
+}

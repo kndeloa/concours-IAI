@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Bootstrap CSS -->
         <title>{% block title %}Concours IAI{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap-4/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
 
-
+        <script src="{{ asset('assets/jquery-3.2.1/jquery-3.2.1.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/bootstrap-4/js/popper.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/bootstrap-4/js/bootstrap.min.js') }}" type="text/javascript"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
