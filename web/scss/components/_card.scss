@@ -1,0 +1,99 @@
+//-------------------------//
+// Card Component
+// by Mystro Ken <mystroken@gmail.com>
+//
+// A component using the BEM Methodology.
+// About BEM - https://en.bem.info/methodology/quick-start/
+//
+// - .card
+// - .card__image
+// - .card__content
+// - .card__title
+//-------------------------//
+
+// Variables
+$card: '.card' !default;
+
+
+%card__block--reset {
+  // Reset the component's style
+  text-decoration: none;
+  color: inherit;
+  
+  margin: 0; padding: 0;
+  display: inline-block;
+  width: 100%;
+}
+  
+
+// Block -- card__image
+#{$card}__image {
+  @extend %card__block--reset;
+  position: relative;
+  height: $card__image--height;
+  overflow: hidden;
+  
+  img {
+    position: absolute;
+    top: 50%; left: 50%;
+    right: 0; bottom: 0;
+    width: auto;
+    min-width: 100%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+
+// Block -- card__content
+#{$card}__content {
+  @extend %card__block--reset;
+  padding: $card__content--padding 0;
+  
+  &--centered {
+    text-align: center;
+  }
+}
+
+
+// Block -- card__title
+#{$card}__title {
+  @extend %card__block--reset;
+  font-size: $card__title--font-size;
+  font-weight: $card__title--font-weight;
+}
+
+
+// Block -- card__subtitle
+#{$card}__subtitle {
+  @extend %card__block--reset;
+  color: $card__title--text-color;
+  font-size: $card__subtitle--font-size;
+  font-weight: $card__subtitle--font-weight;
+}
+
+
+// Block -- card
+#{$card} {
+  @extend %card__block--reset;
+  
+  &--bordered {
+    border: $card__border;
+    
+    #{$card}__content {
+      padding: $card__content--padding;
+    }
+  }
+  
+  &--large {
+    #{$card}__image {
+      height: $card--large__image--height;
+    }
+  }
+  
+  &--raised,
+  &--raised-1 { box-shadow: $z1-shadow; }
+  &--raised-2 { box-shadow: $z2-shadow; }
+  &--raised-3 { box-shadow: $z3-shadow; }
+  &--raised-4 { box-shadow: $z4-shadow; }
+  &--raised-5 { box-shadow: $z5-shadow; }
+}

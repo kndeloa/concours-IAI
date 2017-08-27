@@ -1,0 +1,12 @@
+//---------------------------------------------//
+// Susy config (2.2.12)
+// Docs - http://susy.readthedocs.io/shorthand/
+//---------------------------------------------//
+
+$susy: (
+  columns: 12,
+  container: auto,
+  gutter-position: inside-static,
+  gutters: 4rem/10rem,
+  column-width: 10rem
+);

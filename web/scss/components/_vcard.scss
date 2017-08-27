@@ -1,0 +1,55 @@
+//-------------------------//
+// vCard Component
+// by Mystro Ken <mystroken@gmail.com>
+//
+// A component using the BEM Methodology.
+// About BEM - https://en.bem.info/methodology/quick-start/
+//
+// - .vcard
+// - .vcard__image
+// - .vcard__content
+//-------------------------//
+
+// Variables
+$vcard: '.vcard' !default;
+
+#{$vcard} {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+
+#{$vcard}__figure {
+  flex: 0 0 10%;
+  text-align: center;
+
+  font-size: 80%;
+
+  &--large {
+    flex-basis: 25%;
+  }
+}
+
+
+#{$vcard}__image {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  width: 2rem;
+
+  &--rounded {
+    border-radius: 50px;
+  }
+
+  #{$vcard}__figure--large & {
+    width: 5rem;
+  }
+}
+
+#{$vcard}__content {
+  flex: 1 1;
+  padding: gutter()/2;
+}

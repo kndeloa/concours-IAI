@@ -1,0 +1,96 @@
+//-------------------------//
+// Navbar Component
+// by Mystro Ken <mystroken@gmail.com>
+//
+// A component using the BEM Methodology.
+// About BEM - https://en.bem.info/methodology/quick-start/
+//-------------------------//
+
+// Variables
+$navbar: '.navbar' !default;
+$navbar--background-color: black !default;
+$navbar--text-color: white !default;
+$navbar--height: 50px !default;
+
+
+
+#{$navbar} {
+  background: $navbar--background-color;
+  color: $navbar--text-color;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+
+  a {
+    color: $navbar--text-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: $screen-small-up) {
+    height: $navbar--height;
+  }
+
+}
+
+#{$navbar}__container {
+  @extend .container;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media screen and (min-width: $screen-small-up) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#{$navbar}__brand {
+  padding: gutter()/4 0;
+
+  a {
+    display: block;
+  }
+}
+
+
+%navbar__navigation-element-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#{$navbar}__navigation {
+  @extend %navbar__navigation-element-reset;
+
+
+
+  #{&}__item {
+    @extend %navbar__navigation-element-reset;
+    display: inline-block;
+    padding: gutter()/4 0;
+    margin-right: gutter()/2;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    a { display: block;}
+
+
+
+    @media screen and (min-width: $screen-small-up) {
+
+    }
+  }
+
+}

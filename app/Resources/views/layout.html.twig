@@ -3,29 +3,32 @@
 {% block body %}
 
     <nav class="navbar">
-
-        <div class="container">
-
+        <div class="navbar__container">
             <div class="navbar__brand">
-                <a href="{{ path('homepage') }}">Concours IAI</a>
+                <h2>
+                    <a href="{{ path('homepage') }}">Concours IAI</a>
+                </h2>
             </div>
-
-            <ul class="navigation">
-                <li class="navigation__item">
+            <ul class="navbar__navigation">
+                <li class="navbar__navigation__item">
                     <a href="{{ path('homepage') }}">Home</a>
                 </li>
-                <li class="navigation__item">
-                    <a href="{{ path('homepage') }}">Login</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="{{ path('homepage') }}">Register</a>
-                </li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li class="navbar__navigation__item">
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="navbar__navigation__item">
+                        <a href="{{ path('fos_user_security_login') }}">Login</a>
+                    </li>
+                    <li class="navbar__navigation__item">
+                        <a href="{{ path('fos_user_registration_register') }}">Register</a>
+                    </li>
+                {% endif %}
             </ul>
-
-
         </div>
-
-    </nav>
+    </nav><!-- ./navbar -->
 
     {% block content %}{% endblock %}
 

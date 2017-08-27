@@ -1,0 +1,15 @@
+// General Layout
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $screen-small-up) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: $screen-medium-up) {
+    width: 70%;
+  }
+}

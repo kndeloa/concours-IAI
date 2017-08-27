@@ -1,0 +1,30 @@
+//
+// Landing Page Layout
+
+$landing-page: '.landing-page' !default;
+$landing-page--background-color: #e6e6e6 !default;
+
+
+#{$landing-page} {
+  background: $landing-page--background-color;
+  font-size: 1em;
+  line-height: 1.27777778em;
+
+  display: table;
+  height: calc(100vh - #{$navbar--height});
+}
+
+
+#{$landing-page}__title {
+  font-size: 3.0625em;
+  line-height: 1.28571429em;
+  margin-top: 0.42857143em;
+  margin-bottom: 0.85714286em;
+}
+
+
+#{$landing-page}__container {
+  @extend .container;
+  display: table-cell;
+  vertical-align: middle;
+}

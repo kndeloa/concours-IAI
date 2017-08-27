@@ -18,8 +18,8 @@ var cssFiles = [
     ],
     cssDestDir = 'web/css';
 
-var sass_input = 'web/cachu/*.{scss,sass}',
-    sass_watch = ['web/cachu/*.{scss,sass}', 'web/cachu/*/*.{scss,sass}', 'web/cachu/*/*/*.{scss,sass}'],
+var sass_input = 'web/scss/*.{scss,sass}',
+    sass_watch = ['web/scss/*.{scss,sass}', 'web/scss/*/*.{scss,sass}', 'web/scss/*/*/*.{scss,sass}'],
     sass_output = 'web/css',
     sass_options = {
         errLogToConsole: true,
