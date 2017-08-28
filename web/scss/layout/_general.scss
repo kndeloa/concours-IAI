@@ -12,4 +12,19 @@
   @media screen and (min-width: $screen-medium-up) {
     width: 70%;
   }
+
+  &--small {
+  	@media screen and (min-width: $screen-small-up) {
+    	width: 40%;
+  	}
+  }
+}
+
+
+.footer {
+	backgroud: #eee;
+	text-align: center;
+	font-size: 80%;
+	margin-top: gutter();
+	padding: gutter()/2 0;
 }
