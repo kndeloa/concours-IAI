@@ -96,6 +96,7 @@ a:hover, a:active {
 .footer {
   backgroud: #eee;
   text-align: center;
+  font-size: 80%;
   margin-top: 2rem;
   padding: 1rem 0;
 }
@@ -216,17 +217,8 @@ a:hover, a:active {
 
 .auth-page {
   margin: 0;
-  padding: 0;
-  height: -webkit-calc(100vh - 50px);
-  height: -moz-calc(100vh - 50px);
-  height: calc(100vh - 50px);
+  padding: 5rem 0;
   width: 100%;
-  display: table;
-}
-
-.auth-page__inner {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .txt-center {

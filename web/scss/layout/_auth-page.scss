@@ -1,17 +1,17 @@
-// 
+//
 // Auth Page Layout
 
 $auth-page: '.auth-page' !default;
 
 #{$auth-page} {
 	margin: 0;
-	padding: 0;
-	height: calc(100vh - #{$navbar--height});
+	padding: 5rem 0;
+	//height: calc(100vh - #{$navbar--height});
 	width: 100%;
-	display: table;
+	//display: table;
 }
 
 #{$auth-page}__inner {
-	display: table-cell;
-	vertical-align: middle;
+	//display: table-cell;
+	//vertical-align: middle;
 }
