@@ -1,45 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="landing-page">
-        <div class="landing-page__container">
-            <div class="container">
-                <div class="row">
-                  <div class="col-12 col-md-8">
-                    <h1 class="landing-page__title">
-                      Welcome to<br>
-                      Concours IAI Libreville
-                  </h1>
-                  <p>
-                      This platform has been crafted to help candidates to the IAI Libreville concours to submit their folders and to get back their result at the right moment.
-                  </p>
-                  <br>
-                  <p>
-                    <a href="{{ path('fos_user_registration_register') }}" class="btn btn-lg btn-primary">Create your account right now</a>
-                    <br><br>Or
-                    <a href="{{ path('fos_user_security_login') }}">Login to your existing account</a>.
-                  </p>
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <br>
-                    <img src="{{ asset('img/logo-iai.png') }}" alt="IAI Libreville" style="max-width: 100%">
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-    <div class="container">
-        <br><br>
-        <h2>About IAI</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p></p>
+      {{ include('dashboard/index.html.twig') }}
+      
+    {% else %}
 
-        <h2>Good to know</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-    </div>
+      {{ include('default/landing-page.html.twig') }}
+      
+    {% endif %}
 {% endblock %}
